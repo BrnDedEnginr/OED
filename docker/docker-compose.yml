@@ -10,9 +10,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_PASSWORD: oeddevpwd123
-      - POSTGRES_USER: oeddev
-      - POSTGRES_DB: oed
+      POSTGRES_PASSWORD: oeddevpwd123
+      POSTGRES_USER: oeddev
+      POSTGRES_DB: oed
 
 volumes:
   db:
