@@ -13,6 +13,18 @@ services:
       POSTGRES_PASSWORD: oeddevpwd123
       POSTGRES_USER: oeddev
       POSTGRES_DB: oed
+  cache:
+    container_name: redis
+    image: redis
+    restart: always
+    volumes:
+      - cache:/data
+    ports:
+      - "6379:6379"
+    command: redis-server --save 20 1 --loglevel warning --requirepass oeddevpwd123
 
 volumes:
   db:
+    driver: local
+  cache:
+    driver: local
